@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload and Display</title>
+    <style>
+        body {
+            background: url('image3.jpg') center/cover no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        #fileInput {
+            display: none; 
+        }
+        .custom-file-input {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #6ce4dc;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px; 
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #6ce4dc;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload and Display Photo</h1>
+    
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="fileInput" class="custom-file-input">Choose File</label>
+        <input type="file" name="myImage" id="fileInput" accept="image/*" required>
+        <button type="button" onclick="uploadImage()">Upload Photo</button>
+    </form>
+
+    <div id="imageContainer"></div>
+
+    <script>
+        function uploadImage() {
+            var formData = new FormData(document.getElementById('uploadForm'));
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('imageContainer').innerHTML = `<img src="${data.filePath}" alt="Uploaded Photo">`;
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

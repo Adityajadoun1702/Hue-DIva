@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dress Color Changing Project</title>
+    <style>
+         #logo {
+            position: absolute;
+            top: 20px; 
+            left: 20px; 
+            width: 100px; 
+            height: auto; }
+        header {
+            margin: 0;
+            padding: 0
+            ;
+            height: 100vh;
+            background: url('image2.jpg') center/cover no-repeat; 
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .big-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .small-heading {
+            font-size: 1.5em;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #6ce4dc;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px; 
+        }
+
+        .about-us-link {
+            position: absolute;
+            top: 10px;
+            right: 20px; 
+            font-size: 1.8em; 
+            color:violet;
+            text-decoration: none;
+        }
+        main {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('image9.jpg'); 
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.5); 
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px); 
+    }
+
+    .how-to,
+    .tech-used {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.8); 
+      border-radius: 10px;
+    }
+
+    .how-to:hover,
+    .tech-used:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .image-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .image-container img {
+      width: 60%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    footer {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('image7.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        #reviews {
+            margin: 20px;
+        }
+
+        .text-bubble {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #contacts {
+            text-align: center;
+            margin-top: 80px;
+            color: white; 
+        }
+
+        .contact-line {
+            display: inline-block;
+            margin: 10px;
+            color: white;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .contact-line:hover {
+            transform: scale(1.2); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="image11.png" alt="Logo">
+        <div class="overlay"></div>
+        <div class="overlay"></div>
+    <div class="centered-text">
+        <div class="big-heading">Changing Dress Colors with AI</div>
+        <div class="small-heading">Choose your fashion</div>
+        <div class="button-container">
+            <a href="upload.html" target="_main">
+                <button type="button">
+                    <big>upload</big>
+                </button>
+            </a>
+            <button type="button">
+                <big>saved</big>
+            </button>
+            <a href="login.html">
+                <button type="button">
+                    <big>login</big>
+                </button>
+            </a>
+            <a href="sign_up.html">
+                <button type="button">
+                    <big>sign up</big>
+                </button>
+            </a>
+        </div>
+    </div>
+    <a href="about_us2.html" class="about-us-link">
+        <big>About Us</big>
+    </a>
+    </header>
+    <br>
+    <main>
+        <div class="container">
+          <div class="how-to" id="how-to">
+            <h2>How to do?</h2>
+            <ul>
+              <li>Step 1: Click on choose file</li>
+              <li>Step 2: Upload photo</li>
+              <li>Step 3: Select dress colour</li>
+            </ul>
+          </div>
+      
+          <div class="tech-used" id="tech-used">
+            <h2>Tech we used</h2>
+            <p>Generative Adversarial Networks, or GANs, represent a cutting-edge approach to generative modeling within deep learning, often leveraging architectures like convolutional neural networks. The goal of generative modeling is to autonomously identify patterns in input data, enabling the model to produce new examples that feasibly resemble the original dataset.</p>
+          </div>
+        </div>
+      
+        <div class="image-container">
+          <img src="image10.jpg" alt="Image 1"> 
+          <img src="image8.jpg" alt="Image 2">
+        </div>
+      </main>
+      <br>
+      <footer>
+        <footer>
+            <div id="reviews">
+                <h1 style="text-align: left; margin-left: 20px;">Reviews</h1>
+                <div class="text-bubble">
+                    <p>Virtual stylist at your service! AI's speedy and accurate color changes are impressive.  
+                        -_user1</p>
+                </div>
+                <div class="text-bubble">
+                    <p>Time-saver alert! AI helped me visualize dress colors, making online shopping a breeze.  
+                        -_user2</p>
+                </div>
+                <div class="text-bubble">
+                    <p>Fashion game-changer! AI's accuracy in changing dress colors is impressive. A creative way to explore new looks. 
+                        -_user3</p>
+                </div>
+            </div>
+        
+            <div id="contacts">
+                <h2>Our Contacts</h2>
+                <a href=""><div class="contact-line">aditya.k.sharma1054@gmail.com</div></a>
+                <a href=""><div class="contact-line">adityasinghjadoun17@gmail.com</div></a>
+                <a href=""><div class="contact-line">kg6992040@gmail.com</div></a>
+                <a href=""><div class="contact-line">@gmail.com</div></a>
+            </div>
+        </footer>
+      </footer>
+</body>
+</html>
